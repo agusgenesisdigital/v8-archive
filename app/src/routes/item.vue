@@ -638,7 +638,7 @@ export default {
 				.catch(error => {
 					this.$store.dispatch('loadingFinished', id);
 					this.$events.emit('error', {
-						notify: this.$t('something_went_wrong_body'),
+						notify: error.message || this.$t('something_went_wrong_body'),
 						error
 					});
 				});
